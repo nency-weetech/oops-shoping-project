@@ -13,10 +13,8 @@ class Product {
     this.price = price;
   }
 }
-
-console.log(new Product());
-const productList = {
-  products: [
+class ProductList {
+  products= [
     new Product(
       "A pillow",
       "https://www.sleepsia.in/cdn/shop/files/Microfiber_Pillow_1.jpg?v=1762335192",
@@ -29,7 +27,9 @@ const productList = {
       "A carpet which you might like!",
       199.99
     )
-  ],
+  ];
+
+  constructor() {}
 
   render() {
     const renderHook = document.getElementById("app");
@@ -54,6 +54,8 @@ const productList = {
     }
     renderHook.append(prodList);
   }
-};
+}
 
-productList.render();
+
+const productList = new ProductList();
+productList.render(); 
